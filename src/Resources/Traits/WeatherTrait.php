@@ -71,7 +71,8 @@ trait WeatherTrait
             );
         }
 
-        return $this->httpClient->withQuery(['zip' => $zipCode])
+        return $this->httpClient
+            ->withQuery(['zip' => $zipCode])
             ->get($uri)
             ->json();
     }
